@@ -68,11 +68,15 @@ void quick_sort_rec(int *array, int low, int high, size_t size)
 {
 	int pivot;
 
+	if (array == NULL || size <= 1)
+	{
+		return;
+	}
+
 	if (low < high)
 	{
 		pivot = partition(array, low, high, size);
 		quick_sort_rec(array, low, pivot - 1, size);
 		quick_sort_rec(array, pivot + 1, high, size);
 	}
-
 }
