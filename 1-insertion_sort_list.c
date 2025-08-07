@@ -40,7 +40,7 @@ void insertion_sort_list(listint_t **list)
  */
 void swap_node(listint_t **list, listint_t *node1, listint_t *node2)
 {
-	if (node1 == NULL || node2 == NULL)
+	if (node1 == NULL || node2 == NULL || node2->prev != node1)
 	{
 		return;
 	}
@@ -65,5 +65,4 @@ void swap_node(listint_t **list, listint_t *node1, listint_t *node2)
 
 	node2->next = node1;
 	node1->prev = node2;
-
 }
